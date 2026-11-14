@@ -1,4 +1,6 @@
-﻿# ASPAN EON — SPHEREx Data Collector
+![Uploading images (5).jpg…]()
+
+ # ASPAN EON — SPHEREx Data Collector
 
 **NASA Space Apps Challenge 2026**  
 **Component:** Scientific Data Collection  
