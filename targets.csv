@@ -1,0 +1,96 @@
+name,class,ra,dec,most_id,resolver_name,origin,notes
+18_Sco,stable,243.90528000,-8.36944200,,18 Sco,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+47_UMa,stable,164.86680000,40.43025700,,47 UMa,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+51_Peg,stable,344.366,20.76883,,51 Peg,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+61_Vir,stable,199.60144500,-18.31119600,,61 Vir,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+70_Vir,stable,202.10755500,13.77878700,,70 Vir,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+AB_Dor,variable,82.18679167,-65.44858333,,AB Dor,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+AD_Leo,variable,154.90112500,19.87002778,,AD Leo,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+AR_Lac,variable,332.17008333,45.74225000,,AR Lac,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Algol,variable,47.04222,40.95565,,Algol,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Amphitrite,moving,,,29,Amphitrite,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Astraea,moving,,,5,Astraea,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+BY_Dra,variable,278.48237500,51.71913889,,BY Dra,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Bellona,moving,,,28,Bellona,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Beta_Hyi,stable,6.41874000,-77.25424700,,Beta Hyi,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Beta_Lyr,variable,282.51995833,33.36266667,,Beta Lyr,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Betelgeuse,variable,88.79293500,7.40706300,,Betelgeuse,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Ceres,moving,,,1,Ceres,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Delta_Cep,variable,337.29279167,58.41519444,,Delta Cep,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+EV_Lac,variable,341.70720833,44.33400000,,EV Lac,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Egeria,moving,,,13,Egeria,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Eta_Aql,variable,298.11820833,1.00566667,,Eta Aql,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Eunomia,moving,,,15,Eunomia,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Euterpe,moving,,,27,Euterpe,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Flora,moving,,,8,Flora,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Fortuna,moving,,,19,Fortuna,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Gamma_Pav,stable,321.61057500,-65.36619800,,Gamma Pav,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_102365,stable,176.63064000,-40.50035400,,HD 102365,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_114613,stable,198.01351500,-37.80302200,,HD 114613,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_117618,stable,203.10645000,-47.27136300,,HD 117618,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_13445,stable,32.60509500,-50.82372500,,HD 13445,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_134987,stable,228.36955500,-25.30934700,,HD 134987,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_154345,stable,255.65154000,47.08188100,,HD 154345,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_156668,stable,259.41873000,29.22722600,,HD 156668,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_16141,stable,38.83303500,-3.56060200,,HD 16141,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_16417,stable,39.24421500,-34.57797700,,HD 16417,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_168443,stable,275.01639000,-9.59572300,,HD 168443,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_187123,stable,296.74206000,34.41952400,,HD 187123,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_190360,stable,300.90559500,29.89680500,,HD 190360,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_192310,stable,303.82209000,-27.03297700,,HD 192310,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_20794,stable,49.97916000,-43.06978400,,HD 20794,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_209458,stable,330.79488,18.88432,,HD 209458,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_210277,stable,332.37444000,-7.54865400,,HD 210277,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_216437,stable,343.66471500,-70.07370900,,HD 216437,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_217107,stable,344.56476000,-2.39538500,,HD 217107,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_222582,stable,355.46470500,-5.98575700,,HD 222582,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_40307,stable,88.51779000,-60.02347100,,HD 40307,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_69830,stable,124.59976500,-12.63217300,,HD 69830,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+HD_85512,stable,147.77895000,-43.50278700,,HD 85512,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Hebe,moving,,,6,Hebe,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Hygiea,moving,,,10,Hygiea,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Irene,moving,,,14,Irene,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Iris,moving,,,7,Iris,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Juno,moving,,,3,Juno,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Kalliope,moving,,,22,Kalliope,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Lutetia,moving,,,21,Lutetia,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Massalia,moving,,,20,Massalia,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Melpomene,moving,,,18,Melpomene,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Metis,moving,,,9,Metis,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Mira,variable,34.83663,-2.97764,,Mira,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Pallas,moving,,,2,Pallas,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Parthenope,moving,,,11,Parthenope,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Phocaea,moving,,,25,Phocaea,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Proserpina,moving,,,26,Proserpina,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Psyche,moving,,,16,Psyche,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+RR_Lyr,variable,291.36641,42.784447,,RR Lyr,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+RT_Aur,variable,97.14204167,30.49302778,,RT Aur,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+RZ_Cas,variable,42.23129167,69.63427778,,RZ Cas,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+R_Aqr,variable,355.95608333,-15.28450000,,R Aqr,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+R_Cas,variable,359.60362500,51.38880556,,R Cas,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+R_Dor,variable,69.18995833,-62.07716667,,R Dor,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+R_Leo,variable,146.88954167,11.42880556,,R Leo,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+SU_Cas,variable,42.99479167,68.88850000,,SU Cas,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+S_Sge,variable,299.00525000,16.63480556,,S Sge,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+T_Mon,variable,96.30416667,7.08572222,,T Mon,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Tau_Cet,stable,26.01702,-15.93748,,Tau Cet,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Thalia,moving,,,23,Thalia,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Themis,moving,,,24,Themis,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Thetis,moving,,,17,Thetis,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+UV_Cet,variable,24.75591667,-17.95061111,,UV Cet,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+UX_Ari,variable,51.64745833,28.71508333,,UX Ari,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+U_Cep,variable,15.57683333,81.87558333,,U Cep,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Urania,moving,,,30,Urania,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Vesta,moving,,,4,Vesta,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Victoria,moving,,,12,Victoria,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+W_Sgr,variable,271.25508333,-29.58008333,,W Sgr,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+W_UMa,variable,145.93945833,55.95252778,,W UMa,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+X_Cyg,variable,310.85079167,35.58780556,,X Cyg,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+YZ_CMi,variable,116.16737500,3.55244444,,YZ CMi,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Y_Oph,variable,268.16125000,-6.14358333,,Y Oph,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Zeta_Gem,variable,106.02720833,20.57030556,,Zeta Gem,V3_90,Coordinates may require proper-motion propagation or moving-object ephemerides
+Barnards_Star,moving_nasa,,,,Barnard Star,NASA_challenge,High proper motion: Gaia epoch propagation required
+Epsilon_Indi_B,moving_nasa,,,,Epsilon Indi B,NASA_challenge,Resolve component/pair unambiguously; proper motion required
+WISE_0855,moving_nasa,133.79512917,-7.24514722,,WISE 0855-0714,NASA_challenge,Challenge coordinate is reference only; propagate to observation epoch
+RW_Aur,variable_nasa,,,,RW Aurigae,NASA_challenge,Photometry in matched wavelengths/epochs
+R_Dra,variable_nasa,,,,R Draconis,NASA_challenge,Photometry in matched wavelengths/epochs

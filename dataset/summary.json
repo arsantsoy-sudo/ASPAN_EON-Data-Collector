@@ -1,0 +1,15 @@
+{
+  "targets": 95,
+  "fits_copied": 2240,
+  "missing_or_unavailable": 0,
+  "png": 22,
+  "by_class": {
+    "moving_nasa": 72,
+    "variable_nasa": 48,
+    "stable": 712,
+    "variable": 712,
+    "moving": 696
+  },
+  "source_dataset": "SPHEREx Space Apps 2026",
+  "scientific_motion_verified": false
+}

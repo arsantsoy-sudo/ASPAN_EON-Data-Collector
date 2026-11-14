@@ -1,0 +1,21 @@
+{
+  "cutout_deg": 0.14,
+  "max_per_detector": 4,
+  "max_search_rows_per_target": 1500,
+  "preferred_releases": [
+    "DR1",
+    "QR3"
+  ],
+  "allow_qr2_fallback": false,
+  "minimum_usable_cutout_pixels": 60,
+  "png_targets": [
+    "Ceres",
+    "Vesta",
+    "RR_Lyr",
+    "Mira",
+    "51_Peg",
+    "Tau_Cet"
+  ],
+  "png_limit_per_target": 2,
+  "request_timeout_seconds": 120
+}
