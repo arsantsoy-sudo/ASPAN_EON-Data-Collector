@@ -1,4 +1,5 @@
-![Uploading images (5).jpg…]()
+<img width="738" height="414" alt="images (5)" src="https://github.com/user-attachments/assets/dd425475-59b1-40c8-b8a3-e4c243ba054d" />
+
 
  # ASPAN EON — SPHEREx Data Collector
 
