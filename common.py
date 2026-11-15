@@ -1,4 +1,3 @@
-"""Shared paths, CSV I/O, and configuration for the SPHEREx pipeline."""
 from __future__ import annotations
 import csv
 import hashlib
