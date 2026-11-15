@@ -1,5 +1,4 @@
-"""SPHEREx Space Apps 2026 — download.
-
+"""SPHEREx Space Apps 2026 - download
 Original science methods extracted from the working monolithic main.py;
 raw FITS and catalog data are never included with this source distribution.
 """
