@@ -1,5 +1,4 @@
-"""SPHEREx Space Apps 2026 — processing.
-
+"""SPHEREx Space Apps 2026 - processing.
 Original science methods extracted from the working monolithic main.py;
 raw FITS and catalog data are never included with this source distribution.
 """
@@ -23,7 +22,6 @@ def validate(args):
     print("QUALITY:",dict(Counter(r["file_status"] for r in rows)))
 
 def compare(args):
-    """Create registered time-pair previews (not an automatic motion discovery)."""
     try:
         from reproject import reproject_interp
     except ImportError as exc:
@@ -47,9 +45,7 @@ def compare(args):
     good=np.isfinite(image1)&np.isfinite(aligned2)&(footprint>0)
     if good.sum()<100:
         raise SystemExit("Insufficient common sky overlap for useful comparison")
-    # These display-only panels are independently background adjusted;
-    # raw pixel differences across LVF wavelengths are NOT reliable photometry.
-    # Visualization only: independent asinh scales are NOT physical flux differences.
+    
     def stretch(image):
         low,high=np.nanpercentile(image[good],[2,99.5])
         scaled=np.clip((image-low)/max(high-low,1e-12),0,1)
