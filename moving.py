@@ -10,7 +10,6 @@ from search import get_targets, cutout_url, safe_filename
 
 
 def import_moving(args):
-    """Use preexisting moving-object ephemeris records; do not invent positions."""
     path=Path(args.csv).resolve(); old=csv_read(path)
     targets={r["name"]:r for r in get_targets()}
     known=csv_read(OBS); oldkeys={(r["name"],r["image_url"],r["cutout_url"]) for r in known}
@@ -39,7 +38,6 @@ def import_moving(args):
     print("Imported moving target observations:",count,"from",path.name)
 
 def _most_cell(row, key):
-    """Read an Astroquery table cell without turning masked values into data."""
     try:
         value = row[key]
         if getattr(value, "mask", False) is True:
@@ -51,14 +49,9 @@ def _most_cell(row, key):
         return ""
 
 def query_most(target: dict, start: str, end: str) -> list[dict]:
-    """Return ALL dated, real DR1/QR3 SPHEREx exposures along an orbit.
 
-    MOST calculates asteroid ephemerides; we never infer them from a static RA/Dec.
-    No synthetic URLs, and no QR2->DR1 string replacement.
-    """
     from astroquery.ipac.irsa.most import Most
     designation = str(target.get("most_id", "")).strip()
-    # NASA/IPAC tutorial uses '20000004' (NAIF asteroid number) for Vesta.
     obj_name = str(20000000 + int(designation)) if designation.isdigit() else target.get("resolver_name", target["name"])
     response = Most.query_object(
         catalog="spherex", output_mode="Regular", obj_name=obj_name,
@@ -91,7 +84,6 @@ def query_most(target: dict, start: str, end: str) -> list[dict]:
             continue
         band = astro.detector_from_filename(url)
         if band not in astro.BAND_UM:
-            # Never label an unknown detector as a known band.
             continue
         observations.append({"image_url":url,"ra":ra,"dec":dec,"mjd":mjd,"band":band,"release":release})
     return list({r["image_url"]:r for r in observations}.values())
@@ -118,7 +110,6 @@ def search_moving(args):
                 print(f"MOST [{i}/{len(targets)}] {name}",flush=True)
                 calls+=1
                 records=query_most(t,args.obs_begin,args.obs_end)
-                # Cache all parsed matches, not just selected six from V3.
                 tmp=cache_file.with_suffix(".tmp")
                 tmp.write_text(json.dumps(records,ensure_ascii=False,indent=2),encoding="utf-8")
                 tmp.replace(cache_file)
@@ -133,8 +124,7 @@ def search_moving(args):
                 for rec in selected:
                     ra,dec=rec["ra"],rec["dec"]
                     url=rec["image_url"]
-                    # EPHEMERIS-CENTERED CUTOUTS: These follow the asteroid.
-                    # Fixed-sky movies need a separate field selection/registration.
+                   
                     entries.append({"name":name,"class":"moving","ra":ra,"dec":dec,
                         "mjd":rec["mjd"],"band":band,"release":rec["release"],
                         "image_url":url,
@@ -151,7 +141,6 @@ def search_moving(args):
         except Exception as exc:
             print(f"  MOST failed for {name}: {exc}",flush=True)
             reports.append({"name":name,"status":"error","found":0,"selected":0,"details":str(exc)[:160]})
-    # Never discard old asteroid entries merely because a new query failed.
     replaced=set(new_by_name)
     updated=[r for r in previous if not (r["class"]=="moving" and r["name"] in replaced)]
     for name in replaced:
@@ -169,24 +158,17 @@ def search_moving(args):
     print("No FITS downloaded; previous NASA/star observations preserved.")
 
 def _moving_angle(a: dict, b: dict) -> float:
-    """Small-field angular separation in degrees; handles RA crossing 0 degrees."""
     dec_mid = math.radians((float(a["dec"]) + float(b["dec"])) / 2)
     dra = (float(b["ra"]) - float(a["ra"]) + 180) % 360 - 180
     return math.hypot(dra * math.cos(dec_mid), float(b["dec"]) - float(a["dec"]))
 
 def _shared_center(a: dict, b: dict) -> tuple[float, float]:
-    """One fixed sky position for BOTH asteroid FITS in the same pair."""
     a_ra, b_ra = float(a["ra"]), float(b["ra"])
     dra = (b_ra - a_ra + 180) % 360 - 180
     return (a_ra + dra/2) % 360, (float(a["dec"]) + float(b["dec"])) / 2
 
 def select_moving_pairs(args):
-    """Re-select cached MOST observations into fixed-sky pairs WITHOUT any network requests.
-
-    Each pair contains two different real exposures of the same detector, with
-    a single identical cutout center. A 0.14 deg cutout is expected to include
-    both ephemeris positions; detector footprint must still be tested on FITS.
-    """
+    
     cfg=settings(); size=float(cfg["cutout_deg"])
     limit=int(cfg.get("max_per_detector",4))
     cache_dir=CAT/"most_cache"
