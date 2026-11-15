@@ -3,10 +3,6 @@
 
  # ASPAN EON — SPHEREx Data Collector
 
-**NASA Space Apps Challenge 2026**  
-**Component:** Scientific Data Collection  
-**Contributor:** Arsan Tsoi  
-**Data source:** NASA/IPAC Infrared Science Archive (IRSA)
 
 ## 1. About the Project
 
