@@ -1,5 +1,4 @@
-"""SPHEREx Space Apps 2026 — moving.
-
+"""SPHEREx Space Apps 2026 - moving.
 Original science methods extracted from the working monolithic main.py;
 raw FITS and catalog data are never included with this source distribution.
 """
