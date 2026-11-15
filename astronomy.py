@@ -1,7 +1,4 @@
-"""Small, auditable astronomy helpers for SPHEREx Space Apps 2026.
 
-We never infer measured source motion from ephemeris or frame-to-frame PNG changes.
-"""
 from __future__ import annotations
 
 import math
@@ -15,7 +12,7 @@ REQUIRED = ("IMAGE", "FLAGS", "VARIANCE", "ZODI", "WCS-WAVE")
 
 
 def release_from_url(url: str) -> str:
-    """Report release from actual URL, never guess the release from file date."""
+    """Report release from actual URL"""
     path = urlsplit(url).path.lower()
     for release in ("dr1", "qr3", "qr2", "qr1"):
         if f"/{release}/" in path:
@@ -30,7 +27,6 @@ def detector_from_filename(filename: str) -> str:
 
 
 def check_fits(path: Path, ra: float | None, dec: float | None) -> dict:
-    """Inspect MEF without altering it. Report warnings, not blanket rejection."""
     from astropy.io import fits
     from astropy.wcs import WCS
     from astropy.coordinates import SkyCoord
@@ -86,7 +82,6 @@ def check_fits(path: Path, ra: float | None, dec: float | None) -> dict:
 
 
 def make_png(fits_path: Path, png_path: Path, label: str) -> bool:
-    """PNG is display-only; independent rescaling destroys flux comparability."""
     from astropy.io import fits
     import matplotlib
     matplotlib.use("Agg")
@@ -113,7 +108,6 @@ def make_png(fits_path: Path, png_path: Path, label: str) -> bool:
 
 
 def choose_spaced(rows: list[dict], count: int) -> list[dict]:
-    """At most count observations, spread through available MJD span."""
     rows = sorted(rows, key=lambda r: float(r["mjd"]))
     if len(rows) <= count:
         return rows
@@ -122,11 +116,6 @@ def choose_spaced(rows: list[dict], count: int) -> list[dict]:
 
 
 def position_at_mjd(target: dict, mjd: float) -> tuple[float, float, str]:
-    """Epoch position: measured Barnard astrometry; other objects keep catalog position.
-
-    A propagated position predicts where to look, NOT a detected source position.
-    Other high-motion objects require vetted PM/parallax before claiming detections.
-    """
     if target["name"] != "Barnards_Star":
         return float(target["ra"]), float(target["dec"]), "catalog_position_unpropagated"
     from astropy.coordinates import SkyCoord, Distance
@@ -142,11 +131,6 @@ def position_at_mjd(target: dict, mjd: float) -> tuple[float, float, str]:
 
 
 def balanced_epochs(candidates: list[dict], count: int) -> list[dict]:
-    """Prefer DR1 and QR3 separately, then select well-separated MJD within each.
-
-    This guarantees equal *counts* per release when sufficient records exist,
-    not coincident observation times across different detector bands.
-    """
     if count < 1:return []
     by_release={rel:[] for rel in ("DR1","QR3","QR2")}
     for r in candidates:
@@ -154,7 +138,6 @@ def balanced_epochs(candidates: list[dict], count: int) -> list[dict]:
     releases=[rel for rel in ("DR1","QR3") if by_release[rel]]
     if not releases and by_release["QR2"]:releases=["QR2"]
     if not releases:return []
-    # Remove duplicate exposure URLs and repeated timestamps before selecting.
     pools={}
     for rel in releases:
         seen=set();pools[rel]=[]
