@@ -1,6 +1,6 @@
-"""Four-epoch, fixed-sky D1 previews for the four remaining NASA targets.
-
-Read-only: uses downloaded SPHEREx FITS, never modifies source files.
+"""
+Four-epoch, fixed-sky D1 previews for the 4  remaining NASA targets
+Read-only: uses downloaded SPHEREx FITS, never modifies source files
 Run inside SPHEREx_SpaceApps_2026_KIT: python preview_other_nasa.py
 """
 import csv
