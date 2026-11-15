@@ -1,8 +1,4 @@
-"""SPHEREx Space Apps 2026 — delivery.
 
-Original science methods extracted from the working monolithic main.py;
-raw FITS and catalog data are never included with this source distribution.
-"""
 from __future__ import annotations
 import argparse
 from common import *
@@ -33,7 +29,9 @@ def sequences(args):
     print("SEQUENCES:",len(result),"groups, registration not claimed")
 
 def export(args):
-    """Clean, atomic-ish handoff; no scripts, no NPZ, no preexisting junk catalogs."""
+
+
+    
     if not QA.exists(): validate(args)
     if not (CAT/"sequences.csv").exists():sequences(args)
     obs=csv_read(OBS);quality={r["file"]:r for r in csv_read(QA)}
@@ -92,7 +90,7 @@ def export(args):
     for r in meta:
         qa_out.append({"name":r["name"],"file":r["file"],"status":r["status"],"warnings":r["warnings"]})
     csv_write(dest/"catalogs"/"quality_report.csv",qa_out,["name","file","status","warnings"])
-    # Map original paths to exported paths without guessing or ambiguous joins.
+    
     by_original = {}
     for r in obs:
         src = ROOT / r["file"]
@@ -110,13 +108,11 @@ def export(args):
              "source_dataset":"SPHEREx Space Apps 2026", "scientific_motion_verified":False}
     (dest/"summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
     (dest/"README.md").write_text(README_TEAM,encoding="utf-8")
-    # Verify every exported path; report absence explicitly.
     not_found=[r["file"] for r in meta if r["file"] and not (dest/r["file"]).exists()]
     if not_found:raise RuntimeError(f"Export verification failed: {not_found[:3]}")
     print("DELIVERY:",dest,"\nSUMMARY:",json.dumps(summary,ensure_ascii=False))
 
 def audit(args):
-    """Summarize actual downloaded files and detector/release balance without hiding gaps."""
     obs=csv_read(OBS)
     filtered=[r for r in obs if not args.nasa_only or r["class"].endswith("_nasa")]
     if not filtered:
@@ -145,21 +141,15 @@ def status(args):
     print("Search status:",dict(Counter(r["status"] for r in csv_read(SEARCH_LOG))))
 
 
-README_TEAM="""# SPHEREx Space Apps 2026 — Team FITS dataset
-
+README_TEAM="""
 ## Content
-- `fits/`: original IRSA multi-extension FITS cutouts (IMAGE, FLAGS, VARIANCE, ZODI, PSF, WCS-WAVE when available).
-- `catalogs/metadata.csv`: one observation per row, relative FITS filename, MJD, RA/Dec, detector, release, warnings, IRSA source and cutout URLs.
-- `catalogs/object_summary.csv`: counts for each target (including zero counts).
-- `catalogs/band_summary.csv`: detector coverage; wavelength ranges are detector-wide, NOT calibrated source wavelengths.
-- `catalogs/quality_report.csv`: inspection warnings; status `structurally_ok` is NOT a scientifically validated detection.
-- `catalogs/sequences.csv`: possible same-detector time series; NOT registered/photometrically matched by this package.
-- `previews/`: selected PNG examples; display brightness is independently scaled and must not be used to measure flux change.
-
-## Limits and provenance
-Images come from NASA/IPAC IRSA. Every file's release, time, source URL and detector are in `metadata.csv`. Older and newer calibrations are not naively combined for precision photometry. Same detector does not guarantee identical wavelength of a source (SPHEREx uses linear variable filters). For asteroid rows, `ra/dec` denote the fixed cutout center; `object_ra/object_dec` give the predicted object position at each `mjd`, derived from MOST; `pair_id` groups fixed-sky image pairs. The predicted positions are NOT detections. Images need registration and source identification to demonstrate measured motion. No automatic source identity, measured proper motion, flux variation, model accuracy, spectral extraction or motion detection is claimed.
-
-For public time-lapse, check that frames share a fixed sky field, matching wavelengths, valid WCS, and adequate time separation; then register/reproject to a common WCS and measure motion or photometry with appropriate uncertainty. Five NASA challenge targets require separate confirmation of observation availability.
+- `fits/`: original IRSA multi-extension FITS cutouts (IMAGE, FLAGS, VARIANCE, ZODI, PSF, WCS-WAVE when available)
+- `catalogs/metadata.csv`: one observation per row, relative FITS filename, MJD, RA/Dec, detector, release, warnings, IRSA source and cutout URLs
+- `catalogs/object_summary.csv`: counts for each target
+- `catalogs/band_summary.csv`: detector coverage; wavelength ranges are detector-wide, NOT calibrated source wavelengths
+- `catalogs/quality_report.csv`: inspection warnings; status `structurally_ok` is NOT a scientifically validated detection
+- `catalogs/sequences.csv`: possible same-detector time series; NOT registered/photometrically matched by this package
+- `previews/`: selected PNG examples; display brightness is independently scaled and must not be used to measure flux change
 
 ## Official references
 https://irsa.ipac.caltech.edu/Missions/spherex.html
